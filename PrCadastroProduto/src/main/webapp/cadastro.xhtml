@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+ <meta charset="UTF-8" />
+</h:head>
+<h:body>
+
+<h:form id="formAluno">	  
+   <p:panelGrid columns="2">
+	  <p:outputLabel value="RA"/>
+	  <p:inputText value="#{alunoMB.aluno.RA}"/>
+	  
+	  <p:outputLabel value="Nome do Aluno"/>
+	  <p:inputText value="#{alunoMB.aluno.nome}"/>
+	  
+	  <p:outputLabel value="Data de Nascimento"/>
+	  <p:inputText value="#{alunoMB.aluno.dtNascimento}"/>
+	  
+	  <p:outputLabel value="Nome da Mãe"/>
+	  <p:inputText value="#{alunoMB.aluno.nomeMae}"/>
+  </p:panelGrid>
+  
+  <p:commandButton value="Salvar"
+  	               action="#{alunoMB.salvar()}"
+  	               update=":formAluno"
+  />
+  
+  <p:dataTable value="#{alunoMB.alunos}" var="aux">
+     <p:column headerText="RA">
+        <h:outputText value="#{aux.RA}" />
+     </p:column>
+     
+     <p:column headerText="Nome">
+        <h:outputText value="#{aux.nome}" />
+     </p:column>
+     
+     <p:column headerText="Data de Nascimento">
+        <h:outputText value="#{aux.dtNascimento}" />
+     </p:column>
+     
+     <p:column headerText="Nome da Mãe">
+        <h:outputText value="#{aux.nomeMae}" />
+     </p:column>
+     
+  </p:dataTable>
+  
+</h:form>
+
+
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
