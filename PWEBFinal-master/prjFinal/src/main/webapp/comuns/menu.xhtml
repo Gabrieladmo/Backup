@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<h:form>
+		<p:growl id="messages" />
+
+		<p:menubar>
+			<p:submenu label="Cadastros">
+				<p:menuitem value="Curso" url="curso.xhtml" />
+				<p:menuitem value="Turma" url="turma.xhtml" />
+				<p:menuitem value="Instrutor" url="instrutor.xhtml" />
+				<p:menuitem value="Aluno" url="aluno.xhtml" />
+			</p:submenu>
+			<p:separator class="separadorMenu" />
+			<p:submenu label="Operações">
+				<p:menuitem value="Alocar Instrutor" url="alocarInstrutor.xhtml" />
+				<p:menuitem value="Efetuar Matrícula" url="efetuarMatricula.xhtml" />
+			</p:submenu>
+		</p:menubar>
+	</h:form>
+</ui:composition>
