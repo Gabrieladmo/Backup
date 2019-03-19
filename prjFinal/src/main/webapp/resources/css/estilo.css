@@ -1,0 +1,23 @@
+.ui-layout-north {
+	z-index: 20 !important;
+	overflow: visible;
+}
+
+.ui-layout-north .ui-layout-unit-content {
+	overflow: visible;
+}
+
+.ui-priority-primary {
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.separadorMenu {
+	background: #dddddd !important;
+	border: none !important;
+	width: 1px !important;
+	clear: none !important;
+	height: 30px !important;
+	margin: 4px 6px 0 !important;
+}

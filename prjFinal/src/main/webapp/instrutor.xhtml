@@ -1,0 +1,175 @@
+<ui:composition template="comuns/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+
+	<ui:define name="title">
+		<h:outputText value="Instrutores" />
+	</ui:define>
+
+	<ui:define name="principal">
+		<h:form id="formInstrutor">
+			<p:growl id="message" showDetail="true" />
+			<p:focus for="#{instrutorMB.focus}" />
+			<h:panelGrid columns="4" cellpadding="5">
+				<p:outputLabel for="txtCpf" value="CPF" />
+				<p:inputMask id="txtCpf" value="#{instrutorMB.instrutor.cpf}"
+					mask="999.999.999-99" disabled="#{instrutorMB.habilitarCorpo}"
+					required="true" />
+
+				<p:outputLabel value="" />
+				<p:outputLabel value="" />
+
+				<p:outputLabel for="txtNome" value="Nome" />
+				<p:inputText id="txtNome" value="#{instrutorMB.instrutor.nome}"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtNascimento" value="Data de Nascimento" />
+				<p:inputMask id="txtNascimento"
+					value="#{instrutorMB.instrutor.dataNasc}" mask="99/99/9999"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="cbxSexo" value="Sexo" />
+				<h:selectOneMenu disabled="#{not instrutorMB.habilitarCorpo}"
+					value="#{instrutorMB.instrutor.sexo}" id="cbxSexo" required="true">
+					<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+					<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
+				</h:selectOneMenu>
+
+				<p:outputLabel for="cbxEstCivil" value="Estado Civil" />
+				<h:selectOneMenu disabled="#{not instrutorMB.habilitarCorpo}"
+					value="#{instrutorMB.instrutor.estadoCivil}" id="cbxEstCivil"
+					required="true">
+					<f:selectItem itemValue="Solteiro" itemLabel="Solteiro" />
+					<f:selectItem itemValue="Casado" itemLabel="Casado" />
+					<f:selectItem itemValue="Divorciado" itemLabel="Divorciado" />
+				</h:selectOneMenu>
+
+				<p:outputLabel for="txtFormacao" value="Formação" />
+				<p:inputText id="txtFormacao"
+					value="#{instrutorMB.instrutor.formacao}"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtAreaAtuacao" value="Área de Atuação" />
+				<p:inputText id="txtAreaAtuacao"
+					value="#{instrutorMB.instrutor.areaAtuacao}"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtEndereco" value="Endereço" />
+				<p:inputText id="txtEndereco"
+					value="#{instrutorMB.instrutor.endereco}"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtNumero" value="Número" />
+				<p:inputText id="txtNumero" value="#{instrutorMB.instrutor.numero}"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtBairro" value="Bairro" />
+				<p:inputText id="txtBairro" value="#{instrutorMB.instrutor.bairro}"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtCep" value="CEP" />
+				<p:inputMask id="txtCep" value="#{instrutorMB.instrutor.cep}"
+					mask="99999-999" disabled="#{not instrutorMB.habilitarCorpo}"
+					required="true" />
+
+				<p:outputLabel for="txtCidade" value="Cidade" />
+				<p:inputText id="txtCidade" value="#{instrutorMB.instrutor.cidade}"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="cbxEstado" value="Estado" />
+				<h:selectOneMenu disabled="#{not instrutorMB.habilitarCorpo}"
+					value="#{instrutorMB.instrutor.estado}" id="cbxEstado"
+					required="true">
+					<f:selectItem itemValue="AC" itemLabel="AC" />
+					<f:selectItem itemValue="AL" itemLabel="AL" />
+					<f:selectItem itemValue="AP" itemLabel="AP" />
+					<f:selectItem itemValue="AM" itemLabel="AM" />
+					<f:selectItem itemValue="BA" itemLabel="BA" />
+					<f:selectItem itemValue="CE" itemLabel="CE" />
+					<f:selectItem itemValue="DF" itemLabel="DF" />
+					<f:selectItem itemValue="ES" itemLabel="ES" />
+					<f:selectItem itemValue="GO" itemLabel="GO" />
+					<f:selectItem itemValue="MA" itemLabel="MA" />
+					<f:selectItem itemValue="MT" itemLabel="MT" />
+					<f:selectItem itemValue="MS" itemLabel="MS" />
+					<f:selectItem itemValue="MG" itemLabel="MG" />
+					<f:selectItem itemValue="PA" itemLabel="PA" />
+					<f:selectItem itemValue="PA" itemLabel="PA" />
+					<f:selectItem itemValue="PB" itemLabel="PB" />
+					<f:selectItem itemValue="PR" itemLabel="PR" />
+					<f:selectItem itemValue="PE" itemLabel="PE" />
+					<f:selectItem itemValue="PI" itemLabel="PI" />
+					<f:selectItem itemValue="RJ" itemLabel="RJ" />
+					<f:selectItem itemValue="RN" itemLabel="RN" />
+					<f:selectItem itemValue="RS" itemLabel="RS" />
+					<f:selectItem itemValue="RO" itemLabel="RO" />
+					<f:selectItem itemValue="RR" itemLabel="RR" />
+					<f:selectItem itemValue="SC" itemLabel="SC" />
+					<f:selectItem itemValue="SP" itemLabel="SP" />
+					<f:selectItem itemValue="SE" itemLabel="SE" />
+					<f:selectItem itemValue="TO" itemLabel="TO" />
+				</h:selectOneMenu>
+
+				<p:outputLabel for="txtTelefone" value="Telefone" />
+				<p:inputMask id="txtTelefone"
+					value="#{instrutorMB.instrutor.telefone}" mask="(99) 9999-9999"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtRG" value="RG" />
+				<p:inputMask id="txtRG" value="#{instrutorMB.instrutor.rg}"
+					mask="99.999.999-9" disabled="#{not instrutorMB.habilitarCorpo}"
+					required="true" />
+
+				<p:outputLabel for="txtCelular" value="Celular" />
+				<p:inputMask id="txtCelular"
+					value="#{instrutorMB.instrutor.celular}" mask="(99) 9999-9999*"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtEmail" value="Email" />
+				<p:inputText id="txtEmail" value="#{instrutorMB.instrutor.email}"
+					disabled="#{not instrutorMB.habilitarCorpo}" required="true" />
+			</h:panelGrid>
+
+			<p:commandButton value="Consultar"
+				disabled="#{instrutorMB.habilitarCorpo}" update=":formInstrutor"
+				action="#{instrutorMB.consultar}" id="btnConsultar"
+				styleClass="ui-priority-primary" icon="fa fa-search" />
+
+			<p:commandButton value="Inserir" id="btnInserir"
+				disabled="#{not instrutorMB.modoInsercao}" update=":formInstrutor"
+				action="#{instrutorMB.salvar}" styleClass="ui-priority-primary"
+				icon="fa fa-check" />
+
+			<p:commandButton value="Alterar" id="btnAlterar"
+				disabled="#{not instrutorMB.modoAlteracao}" update=":formInstrutor"
+				action="#{instrutorMB.salvar}" styleClass="ui-priority-primary"
+				icon="fa fa-edit" />
+
+			<p:commandButton value="Excluir" id="btnExcluir"
+				disabled="#{not instrutorMB.modoAlteracao}"
+				update=":formInstrutor message" action="#{instrutorMB.remover}"
+				styleClass="ui-priority-primary" icon="fa fa-close">
+				<p:confirm header="Confirmar Exclusão"
+					message="Você tem certeza que deseja excluir o instrutor?"
+					icon="fa fa-exclamation-triangle" />
+			</p:commandButton>
+
+			<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+				<p:commandButton value="Sim" type="button"
+					styleClass="ui-confirmdialog-yes" icon="fa fa-check" />
+				<p:commandButton value="Não" type="button"
+					styleClass="ui-confirmdialog-no" icon="fa fa-close" />
+			</p:confirmDialog>
+
+			<p:button value="Cancelar" id="btnCancelar"
+				disabled="#{not instrutorMB.habilitarCorpo}"
+				styleClass="ui-priority-primary" icon="fa fa-ban" type="reset" />
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>

@@ -1,0 +1,91 @@
+<ui:composition template="comuns/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tm="http://java.sun.com/jsf/composite/terminal/1_0/components">
+
+	<ui:define name="title">
+		<h:outputText value="Autor" />
+	</ui:define>
+
+	<ui:define name="principal">
+		<h:form id="formAutor">
+			<p:growl id="message" showDetail="true" />
+			<p:focus for="#{cursoMB.focus}" />
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel for="txtSiglaCurso" value="Sigla curso" />
+				<p:inputText id="txtSiglaCurso" value="#{cursoMB.curso.sigla}"
+					disabled="#{cursoMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtNomeCurso" value="Nome curso" />
+				<p:inputText id="txtNomeCurso" value="#{cursoMB.curso.nome}"
+					disabled="#{not cursoMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtCargaHor" value="Carga horária" />
+				<p:inputText id="txtCargaHor" value="#{cursoMB.curso.cargaHoraria}"
+					disabled="#{not cursoMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtValCurso" value="Valor curso" />
+				<p:inputText id="txtValCurso" value="#{cursoMB.curso.valor}"
+					disabled="#{not cursoMB.habilitarCorpo}" required="true">
+					<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+				</p:inputText>
+
+				<p:outputLabel for="txtProgCurso" value="Programa curso" />
+				<p:inputText id="txtProgCurso" value="#{cursoMB.curso.programa}"
+					disabled="#{not cursoMB.habilitarCorpo}" required="true" />
+
+				<p:outputLabel for="txtDataVig" value="Data de Vigência" />
+				<p:inputMask id="txtDataVig" value="#{cursoMB.curso.dataVigencia}"
+					mask="99/99/9999" disabled="#{not cursoMB.habilitarCorpo}"
+					required="true" />
+
+				<p:outputLabel for="txtValHoraInst" value="Valor hora instrutor" />
+				<p:inputText id="txtValHoraInst"
+					value="#{cursoMB.curso.valorHoraInstrutor}"
+					disabled="#{not cursoMB.habilitarCorpo}" required="true">
+					<f:convertNumber minFractionDigits="2" maxFractionDigits="2" />
+				</p:inputText>
+			</h:panelGrid>
+
+			<p:commandButton value="Consultar"
+				disabled="#{cursoMB.habilitarCorpo}" update=":formCurso"
+				action="#{cursoMB.consultar}" id="btnConsultar"
+				styleClass="ui-priority-primary" icon="fa fa-search" />
+
+			<p:commandButton value="Inserir" id="btnInserir"
+				disabled="#{not cursoMB.modoInsercao}" update=":formCurso"
+				action="#{cursoMB.salvar}" styleClass="ui-priority-primary"
+				icon="fa fa-check" />
+
+			<p:commandButton value="Alterar" id="btnAlterar"
+				disabled="#{not cursoMB.modoAlteracao}" update=":formCurso"
+				action="#{cursoMB.salvar}" styleClass="ui-priority-primary"
+				icon="fa fa-edit" />
+
+			<p:commandButton value="Excluir" id="btnExcluir"
+				disabled="#{not cursoMB.modoAlteracao}" update=":formCurso message"
+				action="#{cursoMB.remover}" styleClass="ui-priority-primary"
+				icon="fa fa-close">
+				<p:confirm header="Confirmar Exclusão"
+					message="Você tem certeza que deseja excluir o curso?"
+					icon="fa fa-exclamation-triangle" />
+			</p:commandButton>
+
+			<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+				<p:commandButton value="Sim" type="button"
+					styleClass="ui-confirmdialog-yes" icon="fa fa-check" />
+				<p:commandButton value="Não" type="button"
+					styleClass="ui-confirmdialog-no" icon="fa fa-close" />
+			</p:confirmDialog>
+
+			<p:button value="Cancelar" id="btnCancelar"
+				disabled="#{not cursoMB.habilitarCorpo}"
+				styleClass="ui-priority-primary" icon="fa fa-ban" type="reset" />
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
