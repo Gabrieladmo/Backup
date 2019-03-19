@@ -1,0 +1,49 @@
+Cod: 1		Nome: JOAO		Sexo: M		Estado Civil: C
+(15)_3322_2020 Com
+(15)_8516_9098 Cel
+(19)_2233_3110 Res
+(11)_2992_2020 Rec
+
+Cod: 2		Nome: MARIA		Sexo: F		Estado Civil: S
+(15)_3243_1000 Com
+(11)_1234_5678 Res
+(15)_9937_2020 Cel
+
+Cod: 3		Nome: PEDRO		Sexo: M		Estado Civil: C
+(15)_3333_4433 Res
+(15)_3232_2020 Com
+
+Cod: 4		Nome: PAULO		Sexo: M		Estado Civil: S
+(19)_3388_1929 Cel
+(15)_3233_1002 Com
+
+Cod: 5		Nome: ANA		Sexo: F		Estado Civil: C
+(15)_3042_2012 Res
+
+Cod: 6		Nome: JOSE		Sexo: M		Estado Civil: S
+
+Cod: 7		Nome: ANTONIO		Sexo: M		Estado Civil: C
+(15)_4040_0300 Com
+(11)_1234_1234 Res
+
+Cod: 8		Nome: CLAUDIA		Sexo: F		Estado Civil: V
+(11)_3020_1000 Com
+(15)_3021_1222 Res
+
+Cod: 9		Nome: ROBERTO		Sexo: M		Estado Civil: S
+(15)_3021_0323 Res
+
+Cod: 10		Nome: SILVIA		Sexo: F		Estado Civil: S
+(15)_3023_0323 Res
+(15)_2032_2091 Com
+
+Cod: 11		Nome: MARINA		Sexo: F		Estado Civil: S
+(15)_1111_2222 Com
+(15)_2121_1343 Res
+
+Cod: 12		Nome: SEBASTIAO		Sexo: M		Estado Civil: C
+(19)_2002_1022 Com
+(15)_2292_4012 Res
+(15)_3123_3003 Rec
+(15)_9292_3030 Cel
+
